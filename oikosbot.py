@@ -11,6 +11,7 @@ load_dotenv()
 
 import event_handlers
 import oikos_commands
+import oikos_messages
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
@@ -21,16 +22,7 @@ command_center_channel_id = 1111557645720096848
 
 event_handlers.setup_events(bot)
 oikos_commands.setup_commands(bot)
-
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
-
-    await bot.process_commands(message)
+oikos_messages.setup_messages(bot)
 
 
 # Assume client refers to a discord.Client subclass...
