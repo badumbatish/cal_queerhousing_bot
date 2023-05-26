@@ -1,2 +1,2 @@
-# cal_queerhousing_bot
-A cal queer housing discord chatbot
+# Oikos
+A cal (queer) housing discord chatbot
