@@ -9,7 +9,7 @@ from discord.ext import commands
 load_dotenv()
 
 
-
+import event_handlers
 
 intents = discord.Intents.default()
 intents.members = True
@@ -19,10 +19,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 command_center_channel_id = 1111557645720096848
 
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user.name}')
-    print('------')
+event_handlers.setup_events(bot)
 
 @bot.command()
 async def foo(ctx):
