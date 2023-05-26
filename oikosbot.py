@@ -22,10 +22,6 @@ command_center_channel_id = 1111557645720096848
 event_handlers.setup_events(bot)
 
 @bot.command()
-async def foo(ctx):
-    await ctx.send('bar')
-
-@bot.command()
 @commands.has_any_role("Oikos Controller")
 async def say_as_oikos(ctx, arg, channel_id = 1101196152809992264):
 
